@@ -1,0 +1,139 @@
+*{ margin:0; padding:0; }
+ul{list-style:none;}
+body{min-width:960px;}
+a:link{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+a:active{text-decoration:none;}
+/*清除*/
+.clear{clear: both; width: 100%; height: 15px;}
+.blank{height:30px;}
+
+
+/*导航条*/
+.nav {margin : 0px auto; width : 960px; height:110px;}
+.nav .logo-nav{width:110px; height: 107px; float:left;}
+.nav .logo-nav a{ float:left; margin-left:30px;}
+.nav .right-nav{ margin : 0px auto;float:right ; width:760px;}
+.nav .right-nav .nav-ul{font-family:"Microsoft YaHei"; font-size:18px;list-style:none;margin-top:10px;}
+.nav .right-nav .nav-ul .nav-ul-li {float:left;width:145px; padding-top:40px;}
+.nav .right-nav .nav-ul .nav-ul-li .nav-ul-li-a {color:#222222;}
+.nav .right-nav .nav-ul .nav-ul-li :hover{ color:#59606a;}
+.slide{
+	margin-bottom:30px;
+}
+.banner {position:absolute;overflow:hidden;}
+.banner-img {padding:0px; margin:0px; position:absolute;  z-index:1; }
+.banner-img li{float:left;  position:relative; }
+.imgnum {position:relative; z-index:100; margin-left:100px;margin-right:100px;}
+.imgnum span{font-size:50px; cursor:pointer;}
+
+/*首页品牌*/
+.brand {margin : 0px auto;width : 960px;height:600px;}
+.brand .introduce{margin :0px auto ; padding-bottom:15px;text-align:center; font-size:20px;color:#E20C5D;    font-family:"微软雅黑","黑体","新宋体","Arial Unicode MS";}
+.brand .introduce .introduce-en{margin :0px auto;  padding-top:10px;text-align:center; font-size:21px;color:#666;  font-family:"微软雅黑","黑体","新宋体","Arial Unicode MS"; display:block;}
+.brand .introduce .introduce-line{margin :0px auto;padding-top:20px;width:50px;border-bottom:2px solid #E20C5D;}
+
+
+
+.brand .brand-introduce2{ border:1px solid #DDDDDD; float:left; margin:5px 5px 5px 70px;width:310px; height:400px;  text-align:center; padding-top:30px;}
+.brand .brand-introduce2 span{font-size:20px; padding-top:30px;}
+.brand .brand-introduce3{border:1px solid #DDDDDD; float:right; margin:5px 70px 5px 5px;width:310px; height:400px; padding-top:30px;  text-align:center;}
+.brand .brand-introduce3 span{font-size:20px; padding-top:30px;}
+
+
+
+
+/*关于我们*/
+.aboutus{background-color:#D4D4D4; width:100%; height:650px;}
+.aboutus-content {margin :0px auto; width:960px;}
+.aboutus .introduce{ padding-top:30px; padding-bottom:15px; text-align:center; font-size:20px;  font-family:"微软雅黑","黑体","新宋体","Arial Unicode MS";}
+.aboutus .introduce-en{ padding-top:10px;text-align:center; font-size:21px; color:#666; font-family:"微软雅黑","黑体","新宋体","Arial Unicode MS"; }
+.aboutus .introduce-line{margin :0px auto;
+						 padding-top:20px;
+						 width:50px;
+						 border-bottom:2px solid #E20C5D;
+						 margin-bottom:50px;}
+
+.aboutus-content .left-aboutus1{position:relative;top:-15px;float:left;width:470px; height:330px; color:#100E0E;font-size:16px;line-height: 28.8px;}
+.aboutus-content .right-aboutus1{float:right; width:470px; }
+
+.aboutus-content .left-aboutus1 .left-aboutus1-brand{font-size:20px;}
+
+
+
+/*产品展示*/
+.product {margin : 0px auto;
+		 width : 960px; }
+		 
+.product .introduce{margin :0px auto ; 
+					padding-bottom:15px; 
+					padding-top:20px;
+					text-align:center; 
+					font-size:20px;
+					color:#E20C5D;    
+					font-family:"微软雅黑","黑体","新宋体","Arial Unicode MS";}
+					
+.product .introduce .introduce-en{
+								  margin :0px auto; 
+								  padding-top:10px;
+								  text-align:center; 
+								  font-size:21px;
+								  color:#666;    
+								  font-family:"微软雅黑","黑体","新宋体","Arial Unicode MS"; display:block;}
+.product .introduce .introduce-line{margin :0px auto;padding-top:20px;width:50px;border-bottom:2px solid #E20C5D;}
+.product .product-content .product-more{margin :0px auto; float:right; margin-right:17px; color:#666}
+.product .product-content .product-more a{color:#000;text-decoration:underline;}
+.product .product-content .product-more a:hover{color:#666; text-decoration:none;}
+.product .product-content .product-list{float:left; height:420; width:302px;margin-right:18px; border-bottom:1px solid #DDDDDD; margin-bottom:50px;}
+.product .product-content .product-list .bianhao{ position:relative; top:-18px; z-index:10; cursor:default}
+.product .picture-word{text-align:center;  font-size:14px; letter-spacing:1px;  font-family:"微软雅黑","新宋体","Arial Unicode MS";}
+.product-list-picture{ color:#000;}
+.product-list-picture:link{ color:#000;}
+.product-list-picture:visited{ color:#000}
+.product-list-picture:hover{ color:#666;}
+.product-list-picture:active{ color:#000;}
+
+
+
+/*脚部*/
+.footer{width:100%;height:35px;background-color:#888;}
+.footer .content{width:960px;height:35px;text-align:center; margin:0px auto;color:#333333; line-height:35px;}
+.footer .content .frist-list a{color:#333333; text-decoration:underline; font-size:10px;}
+.footer .content .frist-list { width:100px;float:left}
+.footer .content .frist-list a:hover{color:#000; text-decoration:none;}
+
+.footer .content .second-list{font-family:Arial; font-size:12px;float:right; width:300px;}
+/*二维码*/
+.erweima {position:fixed; bottom:50px; right:20px;}
+/*.erweima-remove {position:absolute; left:110px; top:1px; cursor:pointer;}*/
+/*客服联系*/
+
+
+
+/*产品展示*/
+.product-content-introduce  { width:130px; float:left;padding-bottom:15px; padding-top:20px;text-align:left;font-size:20px;color:#E20C5D; }
+.product-type{padding-top:20px; float:right}
+.content-introduce-line{margin:0px auto;  border-bottom:1px solid #666;  margin-bottom:25px; clear:both;}
+.dowmpage{margin:0px auto; width:960px;}
+.page-right{float:right; }
+
+
+/*品牌故事*/
+.story{width:960px; margin:0px auto; }
+.story .story-title{ padding-bottom:15px; padding-top:20px;text-align:left;font-size:20px; color:#000}
+.story .story-line{margin:0px auto;  border-bottom:1px solid #666;}
+
+/*联系我们*/
+.connect{width:960px; margin:0px auto; }
+.connect .connect-left{width:300px; height:300px; float:left}
+.connect .connect-title{ padding-bottom:15px; padding-top:20px;text-align:left;font-size:16px; color:#000}
+.connect .connect-line{width:70px; border-bottom:1px solid #666;  margin-bottom:20px;}
+.connect .connect-right{width:660px;  height:550px; float:right}
+
+/*公司介绍*/
+.company{width:960px; margin:0px auto; }
+.company .company-title{ padding-bottom:15px; padding-top:20px;text-align:center;font-size:20px; color:#000}
+.company .company-line{margin:0px auto;  border-bottom:1px solid #666;  margin-bottom:50px;}
+.company .company-content {width:800px; margin:0px auto;   margin-bottom:50px; height:350px}
+.company .company-content p{line-height:30px;}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<include file="Public/header" title="祥达鞋业有限公司 | 控制台"/>
+	</head>
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+		<include file="Public/top" />
+		<include file="Public/left" />
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+		<section class="content-header">
+          <h1>
+            产品列表
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="{:U('Index/index')}"><i class="fa fa-dashboard"></i> 控制台</a></li>
+            <li class="active">查看列表</li>
+          </ol>
+        </section>
+		<section class="content">
+		<div class="row">
+            <div class="col-xs-12">
+              <div class="box box-primary">
+                <div class="box-header">
+                  <div class="search-box">
+					  <form class="form-inline" action="" method="get">
+					    <select id="order" name="order" class="form-control input-sm">
+							<option value="">发布时间排序</option>
+							<option value="asc">发布时间升</option>
+							<option value="desc">发布时间降</option>
+						</select>
+						<select name="brand" id="brand"  class="form-control input-sm">
+							<option value="">选择品牌</option>
+							<option value="全部">全部</option>
+							<option value="蓝道夫">蓝道夫</option>
+							<option value="琪珂">琪珂</option>
+						</select>
+						<div class="input-group" style="width: 150px;">
+						  <input type="text" name="keyword" class="form-control input-sm pull-right" placeholder="输入货号">
+						  <div class="input-group-btn">
+							<button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+						  </div>
+						</div>
+					  </form>
+                  </div>
+                </div><!-- /.box-header -->
+				<form id="form" action="{:U('del')}" method="post">
+					<div class="box-body table-responsive no-padding">
+					  <table class="table table-hover">
+						<tr>
+							<th class="center"><input class="check-all" type="checkbox" value=""></th>
+							<th>首页</th>
+							
+							<th>货号</th>
+							<th>标题</th>
+							<th>品牌</th>
+							<th>图片</th>
+							<th>地址</th>
+							<th>发布时间</th>
+							<th class="center">操作</th>
+						</tr>
+						<volist name="product" id="val">
+						<tr>
+							<td class="center">
+								<input class="lids" type="checkbox" name="id[]" value="{$val['id']}">
+							</td>
+							<td>{$val['rank']}</td>
+							<td>{$val['bianhao']}</td>
+							<td>{$val['title']}</td>
+							<td>{$val['brand']}</td>
+							<td><img src="__PUBLIC__/upload/image/{$val['img']}" height="30" width="30" /></td>
+							<td><a href="{$val['url']}" target=__blank>{$val['url']|msubstr=0,20,'utf-8',true}</a></td>
+							<td>{$val['time']}</td>
+							<td class="center"><a href="{:U('edit')}?id={$val['id']}" title="修改" ><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;" val="{:U('del')}?id={$val['id']}" title="删除"><i class="fa fa-trash-o"></i></a></td>
+										
+					   </tr>
+					   </volist>
+					  </table>
+					</div><!-- /.box-body -->
+					<div class="box-footer clearfix">
+					  <button type="button" id="del" class="btn btn-default">删除</button>
+					  <a type="button" href="{:U('add')}" class="btn btn-default">添加</a>
+					  <ul class="pagination pagination-sm no-margin pull-right">
+					   {$page}
+					  </ul>
+					</div>
+				</form>
+              </div><!-- /.box -->
+            </div>
+          </div>
+		  </section><!-- /.content -->
+	    </div>
+		<!-- /.content-wrapper -->
+		<include file="Public/footer" />
+    </div><!-- ./wrapper -->
+	<include file="Public/script" />
+	<script>
+		$('#pList').addClass("active").siblings().removeClass("active");
+		$('#iList').addClass("active");
+		$('#order').change(function(){
+			$('form:eq(1)').submit();
+		})
+		$('#brand').change(function(){
+			$('form:eq(1)').submit();
+		})
+		$(function(){
+			$(".check-all").click(function(){
+				$(".lids").prop("checked", this.checked);
+			});
+			$(".lids").click(function(){
+				$(".lids").each(function(i){
+					if(!this.checked){
+						$(".check-all").prop("checked", false);
+						return false;
+					}else{
+						$(".check-all").prop("checked", true);
+					}
+				});
+			})
+			$("#del").click(function(){
+				layer.open({
+					icon:0,
+					title: '删除列表',
+					type: 0, 
+					content: '是否删除选中列表',
+					btn: ['确认', '取消'],
+					yes: function(){
+						$('#form').submit();
+						}
+				});	
+			})
+			
+			$(".del").click(function(){
+				var val=$(this).attr('val');
+				layer.open({
+					icon:0,
+					title: '删除列表',
+					type: 0, 
+					content: '是否删除选中列表',
+					btn: ['确认', '取消'],
+					yes: function(){
+							location.href = val;
+						}
+				});	
+			})
+		})
+	</script>
+</body>
+</html>

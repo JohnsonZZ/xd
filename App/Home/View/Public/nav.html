@@ -1,0 +1,30 @@
+<div class="nav">
+	<div class="logo-nav"><a><img src="__PUBLIC__/images/logo1.jpg" width=
+	"110" height="107" /></a></div>
+	<div class="right-nav">
+		<ul class="nav-ul">
+			<li class="nav-ul-li"><a class="nav-ul-li-a" href="{:U('Home/Index/index')}"> 首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>				
+			<li class="nav-ul-li"><a class="nav-ul-li-a" href="{:U('Home/Product/index')}">产品展示</a></li>
+			<li class="nav-ul-li"><a class="nav-ul-li-a" href="{:U('Home/Brand/index')}">品牌故事</a></li>
+			<li class="nav-ul-li"><a class="nav-ul-li-a" href="{:U('Home/Company/index')}">公司介绍</a></li>
+			<li class="nav-ul-li"><a class="nav-ul-li-a" href="{:U('Home/Connect/index')}">联系我们</a></li>	
+		</ul>
+	</div>
+</div>	
+<div class="slide">
+	<div class="banner">
+		<ul class="banner-img" >
+			<foreach name="banner" item="val">
+				<li><img  src="__PUBLIC__/upload/image/{$val['img']}"/></li>
+			</foreach>
+		</ul>
+		<div class="imgnum">
+			<span class="glyphicon glyphicon-menu-left imgnum-left"></span>
+			<span class="glyphicon glyphicon-menu-right fr imgnum-right"></span>
+		</div>
+	</div>
+</div>
+<div  class="erweima">
+	<!--<span class="glyphicon glyphicon-remove erweima-remove"></span>-->
+	<img width="100%" src="__PUBLIC__/images/newerweima.jpg" height="249" width="120" />
+</div>

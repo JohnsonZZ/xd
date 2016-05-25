@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<include file="Public/header" title="祥达鞋业有限公司 | 控制台"/>
+	</head>
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+		<include file="Public/top" />
+		<include file="Public/left" />
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+		<section class="content-header">
+          <h1>
+            用户表，字段自行修改
+            <small>注意表单提交方式</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="{:U('Index/index')}"><i class="fa fa-dashboard"></i> 控制台</a></li>
+            <li class="active">查看用户</li>
+          </ol>
+        </section>
+		<section class="content">
+		<div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <div class="search-box">
+					  <form id="form" class="form-inline" action="" method="get">
+					    <select id="order" name="order" class="form-control input-sm">
+							<option>注册时间排序</option>
+							<option value="asc">注册时间升</option>
+							<option value="desc">注册时间降</option>
+						</select>
+						<select name="field" class="form-control input-sm">
+							<option value="account">账号</option>
+							<option value="phone">电话</option>
+							<option value="email">邮箱</option>
+						</select>
+						<div class="input-group" style="width: 150px;">
+						  <input type="text" name="keyword" class="form-control input-sm pull-right" placeholder="输入全称">
+						  <div class="input-group-btn">
+							<button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+						  </div>
+						</div>
+					  </form>
+                  </div>
+                </div><!-- /.box-header -->
+				<form id="form" action="{:U('del')}" method="post">
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tr>
+                      <th class="center"><input class="check-all" type="checkbox" value=""></th>
+						<th>账号</th>
+						<th>用户名</th>
+						<th>电话</th>												
+						<th>邮箱</th>	
+						<th>注册时间</th>	
+						<th class="center">操作</th>
+				    </tr>
+					<volist name="list" id="val">
+                    <tr>
+						<td class="center">
+							<input class="uids" type="checkbox" name="id[]" value="{$val['id']}">
+						</td>
+						<td>{$val['account']}</td>
+						<td>{$val['nick']}</td>
+						<td>{$val['phone']}</td>
+						<td>{$val['email']}</td>
+						<td>{$val['time']}</td>
+						<td class="center"><a href="{:U('edit')}?id={$val['id']}"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;" val="{:U('del')}?id={$val['id']}" title="删除"><i class="fa fa-trash-o"></i></a></td>						
+					</tr>
+					</volist>
+                  </table>
+                </div><!-- /.box-body -->
+				<div class="box-footer clearfix">
+				  <button type="button" id="del" class="btn btn-default">删除</button>
+                  <ul class="pagination pagination-sm no-margin pull-right">
+                    {$page}
+                  </ul>
+                </div>
+				</form>
+              </div><!-- /.box -->
+            </div>
+          </div>
+		  </section><!-- /.content -->
+	    </div>
+		<!-- /.content-wrapper -->
+		<include file="Public/footer" />
+    </div><!-- ./wrapper -->
+	<include file="Public/script" />
+	<script>
+		$('#pUser').addClass("active").siblings().removeClass("active");
+		$('#iUser').addClass("active");
+		$('#order').change(function(){
+			$('form:eq(1)').submit();
+		})
+		$(function(){
+			$(".check-all").click(function(){
+				$(".uids").prop("checked", this.checked);
+			});
+			$(".uids").click(function(){
+				$(".uids").each(function(i){
+					if(!this.checked){
+						$(".check-all").prop("checked", false);
+						return false;
+					}else{
+						$(".check-all").prop("checked", true);
+					}
+				});
+			})
+			$("#del").click(function(){
+				layer.open({
+					icon:0,
+					title: '删除列表',
+					type: 0, 
+					content: '是否删除选中列表',
+					btn: ['确认', '取消'],
+					yes: function(){
+						$('#form').submit();
+						}
+				});	
+			})
+			$(".del").click(function(){
+				var val=$(this).attr('val');
+				layer.open({
+					icon:0,
+					title: '删除列表',
+					type: 0, 
+					content: '是否删除选中列表',
+					btn: ['确认', '取消'],
+					yes: function(){
+							location.href = val;
+						}
+				});	
+			})
+		})
+	</script>
+</body>
+</html>

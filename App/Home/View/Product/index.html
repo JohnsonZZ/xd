@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta http-equiv="Cache-Control" content="no-transform" /> 
+  <meta name="renderer" content="webkit" /> 
+  <meta name="mobile-agent" content="format=html5;url=http://m.fkxifu.icoc.cc/" /> 
+  <meta name="keywords" content="蓝道夫,祥达" /> 
+  <meta name="description" content="蓝道夫,祥达" /> 
+  	<include file="Public/header" title="产品展示-肇庆祥达鞋业有限公司" />
+ </head> 
+ <body>
+	<include file="Public/nav" />
+	
+	<div class="product">
+		<div class="product-content">
+			<div class="product-content-introduce">产品展示</div>
+			<div class="product-type">
+				<form class="form-inline" action="" method="get">
+					<select id="brand" name="brand" class="form-control input-sm">
+						<option value="">选择品牌</option>
+						<option value="全部">全部</option>
+						<option value="蓝道夫">蓝道夫</option>
+						<option value="琪珂">琪珂</option>
+					</select>
+				 </form>
+			</div>
+			<div class="content-introduce-line"></div>
+
+			<div class="clear"></div>
+
+			<foreach name="product" item="data">
+				<div class="product-list">
+					<a class="product-list-picture" target="_blank" href="{$data.url}">
+						<img src="__PUBLIC__/upload/image/{$data.img}" width="300" height="350"/>
+					</a>
+					<span class="bianhao">货号：{$data.bianhao}</span>
+					<div class="picture-word">	
+						<a class="product-list-picture" target="_blank" href="{$data.url}">
+							<span class="title-word">{$data.title}</span>
+						</a>
+					</div>				
+				</div>
+			</foreach>		
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="dowmpage">
+		<div class="box-footer clearfix page-right">
+			 <ul class="pagination pagination-sm no-margin pull-right">
+			   {$page}
+			 </ul>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<include file="Public/footer" />	
+	<script>
+		$(function(){
+			$("#brand").change(function(){
+				$('form:eq(0)').submit();
+			})
+		});
+	
+	</script>
+ </body>
+</html>

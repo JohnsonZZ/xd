@@ -1,0 +1,94 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta http-equiv="Cache-Control" content="no-transform" /> 
+  <meta name="renderer" content="webkit" /> 
+  <meta name="mobile-agent" content="format=html5;url=http://m.fkxifu.icoc.cc/" /> 
+  <meta name="keywords" content="蓝道夫,祥达" /> 
+  <meta name="description" content="蓝道夫,祥达" /> 
+  	<include file="Public/header" title="肇庆祥达鞋业有限公司" />
+ </head> 
+ <body>
+	<include file="Public/nav" />
+	<div class="clear"></div>
+	<div class="brand">
+		<div class="introduce">品&nbsp;&nbsp;&nbsp;&nbsp;牌
+			<span class="introduce-en">OUR BRAND</span>
+			<div class="introduce-line"></div>
+		</div>
+		
+		<div class="clear"></div>
+
+		<div class="brand-introduce2">
+			<a class="brand-introduce-a" target="_black"  href="https://landaofu.tmall.com/?spm=a1z10.1-b.1997427721.d4918089.6DleFy" ><img src="__PUBLIC__/images/landaofu.jpg" height="300" width="300" /></a><span>第一品牌</span>
+		</div>
+		<div class="brand-introduce3">
+			<a class="brand-introduce-a" target="_black"  href="http://landaofu.jd.com/view_search-37351-16549-15416-61584-1-0-0-1-1-20.html?isGlobalSearch=0" ><img src="__PUBLIC__/images/qike.jpg" height="300" width="300" /></img></a><span>第二品牌</span>
+		</div>
+		
+	</div>
+
+	<div class="clear"></div>
+	<div class="aboutus">
+		<div class="aboutus-content">
+			<div class="introduce">关于我们</div>
+			<div class="introduce-en">ABOUT US</div>
+			<div class="introduce-line"></div>
+		
+			<div class="left-aboutus1">
+			<p class="left-aboutus1-brand">发展历程：</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1973年，祥达鞋业集团成立，随着产能的提升，1993年创立RANDOLPH(蓝道夫)及琪珂世界注册品牌。</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2007年在全国各地开设多专卖店。2012年携手淘宝及京东商城，开设品牌专营店，采用特有的销售模式，致力打造互联网休闲女鞋品牌</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013年天猫蓝道夫旗舰店正式启动。</p>
+			
+		
+			<p class="left-aboutus1-brand">自创品牌：
+			  <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;蓝道夫，琪珂等	
+			  </p>
+			</p>
+			</div>
+			<div class="right-aboutus1">
+			<img src="__PUBLIC__/images/aboutus11.jpg" height="350" />
+			
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="clear"></div>
+	<div class="product">
+		<div class="product-content">
+			<div class="introduce">产品展示
+				<span class="introduce-en">PRODUCT</span>
+				<div class="introduce-line"></div>
+			</div>
+			<div class="clear"></div>
+			<div class="clear"></div>
+			<div class="clear"></div>
+			<foreach name="product" item="data">
+				<div class="product-list">
+					<a class="product-list-picture" target="_blank" href="{$data.url}">
+						<img src="__PUBLIC__/upload/image/{$data.img}" width="300" height="350"/>
+					</a>
+					<span class="bianhao">编号：{$data.bianhao}</span>
+					<div class="picture-word">	
+						<a class="product-list-picture" target="_blank" href="{$data.url}">
+							<span class="title-word">{$data.title}</span>
+						</a>
+					</div>				
+				</div>
+			</foreach>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="blank"></div>
+
+	
+	<include file="Public/footer" />
+	
+ </body>
+ 
+</html>

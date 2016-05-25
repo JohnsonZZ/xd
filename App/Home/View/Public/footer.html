@@ -1,0 +1,76 @@
+<div class="footer">
+	<div class="content">
+		<div class="frist-list">
+			<a href="{:U('Home/Index/index')}">首页</a>
+			<a href="{:U('Home/Index/index')}">关于我们</a>
+		</div>
+		<div class="second-list">
+			&copy; &nbsp;2016&nbsp;&nbsp;&nbsp;&nbsp;肇庆祥达鞋业有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;版权所有
+		</div>
+	</div>
+</div>	
+	
+	
+	
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script src="__BOOTSTRAP__/js/bootstrap.min.js"></script>
+	<script src="__PLUGINS__/layer/layer.js"></script>
+	
+	<script>
+	     var index = 0;
+		 var imgWidth = $("body").width(); ; //一个图的宽度
+		 var bannerWidth = imgWidth +'px';  //banner的宽度
+		 var imgLen = $(".banner-img li").length;
+		 var oWidth =  imgLen * imgWidth + 'px'; //全部图的宽度
+		 
+		 
+		 $(window).resize(function(){ 
+			imgWidth = $("body").width(); ; //一个图的宽度
+			bannerWidth = imgWidth +'px';  //banner的宽度
+		    imgLen = $(".banner-img li").length;
+		    oWidth =  imgLen * imgWidth + 'px'; //全部图的宽度
+		    $(".banner-img").width(oWidth);        	 		 //ul的宽度
+			$(".banner").width(bannerWidth);       			 //bannerdiv的宽度
+			$(".banner-img img").width(bannerWidth);			 //图片的宽度
+			imgHeight = $(".banner-img img").height();      //得到图片的高度
+			$(".slide").height(imgHeight);           		     //slide的高度
+			$(".banner").height(imgHeight);           		     //banner的高度
+			$(".imgnum").offset({top:imgHeight*0.435+110});
+		 
+		 });
+		 
+		 
+         $(function () {
+		     $(".banner-img").width(oWidth);        	 		 //ul的宽度
+			 $(".banner").width(bannerWidth);       			 //bannerdiv的宽度
+			 $(".banner-img img").width(bannerWidth);			 //图片的宽度
+			 var imgHeight = $(".banner-img img").height();      //得到图片的高度
+			 $(".slide").height(imgHeight);           		     //slide的高度
+			 $(".banner").height(imgHeight);           		     //banner的高度
+			 $(".imgnum").offset({top:imgHeight*0.435+110});
+			 $(".imgnum-left").click(function(){					
+				index--;
+				if(index == -1){index = imgLen-1 ;}
+				iWidth=  index * imgWidth	;
+				$(".banner-img").stop(true,true).animate({left:"-"+iWidth+'px'},"slow");
+				
+			 });		 
+			 $(".imgnum-right").click(function(){		
+				move();
+				});		
+						
+         });
+		 function move(){
+				index++;	
+				if(index == imgLen)
+				{index = 0;}
+				iWidth=  index * imgWidth	;
+				$(".banner-img").stop(true,true).animate({left:"-"+iWidth+'px'},"slow");
+				
+		 }
+		 setInterval("move()",3000);
+		 
+		 
+		 
+
+	</script>
