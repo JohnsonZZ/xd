@@ -1,5 +1,5 @@
 <?php
-namespace Admin\Controller;
+namespace Xdmin\Controller;
 use Think\Controller;
 class BannerController extends Controller {
     public function index(){

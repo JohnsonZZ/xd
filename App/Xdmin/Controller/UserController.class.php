@@ -1,6 +1,6 @@
 <?php
-namespace Admin\Controller;
-use Admin\Controller\ComController;
+namespace Xdmin\Controller;
+use Xdmin\Controller\ComController;
 header("Content-type:text/html;charset=utf-8");
 class UserController extends ComController {
     public function index(){

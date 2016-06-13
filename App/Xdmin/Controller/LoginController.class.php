@@ -1,5 +1,5 @@
 <?php
-namespace Admin\Controller;
+namespace Xdmin\Controller;
 use Think\Controller;
 header("Content-type:text/html;charset=utf-8");
 class LoginController extends Controller {
