@@ -9,7 +9,7 @@ class ProductController extends ComController {
 		$brand = I('get.brand');
 		$time = I('get.order');
 		if(empty($keyword)){
-			$order = empty($time)? 'time desc' : "time $time";
+			$order = empty($time)? 'id desc' : "time $time";
 			if(($brand == "蓝道夫") || ($brand == "琪珂")){
 				$where['brand'] = $brand;
 				$count = $Product-> where($where) ->count(); // 查询满足要求的总记录数
