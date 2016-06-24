@@ -17,7 +17,7 @@ class ProductController extends Controller {
 			$where['brand'] = $brand;
 			$count = $Product-> where($where) -> count(); // 查询满足要求的总记录数		
 			$Page = new \Think\Page($count,21); // 实例化分页类 传入总记录数和每页显示的记录数(10)
-			$product = $Product-> where($where) ->limit($Page->firstRow . ',' . $Page->listRows)->select();
+			$product = $Product-> where($where) ->order("id desc")-> limit($Page->firstRow . ',' . $Page->listRows)->select();
 		}
 		else
 		{
