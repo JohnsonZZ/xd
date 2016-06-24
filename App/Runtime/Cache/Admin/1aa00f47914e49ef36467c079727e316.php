@@ -1,0 +1,284 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+	<head>
+			<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>祥达鞋业有限公司 | 控制台</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
+	<!--ICO-->
+	<link href="/Public/images/shoye.ico" rel="shortcut icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/Plugins/fa/css/font-awesome.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/Public/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="/Public/css/skins.min.css">
+	</head>
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+		<header class="main-header">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>XD</b></span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>祥达鞋业后台</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="/Public/upload/image/<?php echo ($_SESSION['href']); ?>" class="user-image" alt="User Image">
+                  <span class="hidden-xs"><?php echo ($_SESSION['account']); ?></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header">
+                    <img src="/Public/upload/image/<?php echo ($_SESSION['href']); ?>" class="img-circle" alt="User Image">
+                    <p>
+                      <?php echo ($_SESSION['account']); ?> - 后台管理员
+                    </p>
+                  </li>
+                  <!-- Menu Body -->
+
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="<?php echo U('Home/Index/index');?>" class="btn btn-default btn-flat">前台</a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="<?php echo U('Login/quit');?>" class="btn btn-default btn-flat">退出</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              
+            </ul>
+          </div>
+        </nav>
+      </header>
+		<!-- Left side column. contains the logo and sidebar -->
+	<aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- search form -->
+          <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+              <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
+          <!-- /.search form -->
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="header">主菜单</li>
+            <li class="active treeview">
+              <a href="<?php echo U('Index/index');?>">
+                <i class="fa fa-dashboard"></i> <span>控制台</span>
+              </a>
+            </li>
+            <li id="pList" class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>产品信息</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="iList"><a href="<?php echo U('Product/index');?>"><i class="fa fa-circle-o"></i> 查看产品</a></li>
+                <li id="aList"><a href="<?php echo U('Product/add');?>"><i class="fa fa-circle-o"></i> 添加产品</a></li>
+              </ul>
+            </li>
+			<li id="pBanner" class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>横幅</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="iBanner"><a href="<?php echo U('Banner/index');?>"><i class="fa fa-circle-o"></i> 查看横幅</a></li>
+                <li id="aBanner"><a href="<?php echo U('Banner/add');?>"><i class="fa fa-circle-o"></i> 添加横幅</a></li>
+              </ul>
+            </li>
+			<li id="pAdmin" class="treeview">
+              <a href="#">
+                <i class="fa fa-key"></i>
+                <span>管理员组</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="iAdmin"><a href="<?php echo U('Admin/index');?>"><i class="fa fa-circle-o"></i> 管理员列表</a></li>
+                <li id="aAdmin"><a href="<?php echo U('Admin/add');?>"><i class="fa fa-circle-o"></i> 添加管理员</a></li>
+              </ul>
+            </li>
+            <li id="important"><a href="#"><i class="fa fa-circle-o text-red"></i> <span>重要信息</span></a></li>
+            <li id="warning"><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>警告信息</span></a></li>
+            <li id="info"><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>一般信息</span></a></li>
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+		<section class="content-header">
+          <h1>
+            产品列表
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="<?php echo U('Index/index');?>"><i class="fa fa-dashboard"></i> 控制台</a></li>
+            <li class="active">查看列表</li>
+          </ol>
+        </section>
+		<section class="content">
+		<div class="row">
+            <div class="col-xs-12">
+              <div class="box box-primary">
+                <div class="box-header">
+                  <div class="search-box">
+					  <form class="form-inline" action="" method="get">
+					    <select id="order" name="order" class="form-control input-sm">
+							<option value="">发布时间排序</option>
+							<option value="asc">发布时间升</option>
+							<option value="desc">发布时间降</option>
+						</select>
+						<select name="brand" id="brand"  class="form-control input-sm">
+							<option value="">选择品牌</option>
+							<option value="全部">全部</option>
+							<option value="蓝道夫">蓝道夫</option>
+							<option value="琪珂">琪珂</option>
+						</select>
+						<div class="input-group" style="width: 150px;">
+						  <input type="text" name="keyword" class="form-control input-sm pull-right" placeholder="输入货号">
+						  <div class="input-group-btn">
+							<button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+						  </div>
+						</div>
+					  </form>
+                  </div>
+                </div><!-- /.box-header -->
+				<form id="form" action="<?php echo U('del');?>" method="post">
+					<div class="box-body table-responsive no-padding">
+					  <table class="table table-hover">
+						<tr>
+							<th class="center"><input class="check-all" type="checkbox" value=""></th>
+							<th>首页</th>
+							
+							<th>货号</th>
+							<th>标题</th>
+							<th>品牌</th>
+							<th>图片</th>
+							<th>地址</th>
+							<th>发布时间</th>
+							<th class="center">操作</th>
+						</tr>
+						<?php if(is_array($product)): $i = 0; $__LIST__ = $product;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><tr>
+							<td class="center">
+								<input class="lids" type="checkbox" name="id[]" value="<?php echo ($val['id']); ?>">
+							</td>
+							<td><?php echo ($val['rank']); ?></td>
+							<td><?php echo ($val['bianhao']); ?></td>
+							<td><?php echo ($val['title']); ?></td>
+							<td><?php echo ($val['brand']); ?></td>
+							<td><img src="/Public/upload/image/<?php echo ($val['img']); ?>" height="30" width="30" /></td>
+							<td><a href="<?php echo ($val['url']); ?>" target=__blank><?php echo (msubstr($val['url'],0,20,'utf-8',true)); ?></a></td>
+							<td><?php echo ($val['time']); ?></td>
+							<td class="center"><a href="<?php echo U('edit');?>?id=<?php echo ($val['id']); ?>" title="修改" ><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="del" href="javascript:;" val="<?php echo U('del');?>?id=<?php echo ($val['id']); ?>" title="删除"><i class="fa fa-trash-o"></i></a></td>
+										
+					   </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+					  </table>
+					</div><!-- /.box-body -->
+					<div class="box-footer clearfix">
+					  <button type="button" id="del" class="btn btn-default">删除</button>
+					  <a type="button" href="<?php echo U('add');?>" class="btn btn-default">添加</a>
+					  <ul class="pagination pagination-sm no-margin pull-right">
+					   <?php echo ($page); ?>
+					  </ul>
+					</div>
+				</form>
+              </div><!-- /.box -->
+            </div>
+          </div>
+		  </section><!-- /.content -->
+	    </div>
+		<!-- /.content-wrapper -->
+			<footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; 2016-2017 <a href="http://almsaeedstudio.com">肇庆市祥达鞋业有限公司</a>.</strong> All rights reserved.
+      </footer>
+    </div><!-- ./wrapper -->
+		<!-- jQuery 1.1.12 -->
+    <script src="/Public/js/jquery.js"></script>
+	<!-- layer 2.2 -->
+	<script src="/Plugins/layer/layer.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="/Bootstrap/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/Public/js/app.min.js"></script>
+	<script>
+		$('#pList').addClass("active").siblings().removeClass("active");
+		$('#iList').addClass("active");
+		$('#order').change(function(){
+			$('form:eq(1)').submit();
+		})
+		$('#brand').change(function(){
+			$('form:eq(1)').submit();
+		})
+		$(function(){
+			$(".check-all").click(function(){
+				$(".lids").prop("checked", this.checked);
+			});
+			$(".lids").click(function(){
+				$(".lids").each(function(i){
+					if(!this.checked){
+						$(".check-all").prop("checked", false);
+						return false;
+					}else{
+						$(".check-all").prop("checked", true);
+					}
+				});
+			})
+			$("#del").click(function(){
+				layer.open({
+					icon:0,
+					title: '删除列表',
+					type: 0, 
+					content: '是否删除选中列表',
+					btn: ['确认', '取消'],
+					yes: function(){
+						$('#form').submit();
+						}
+				});	
+			})
+			
+			$(".del").click(function(){
+				var val=$(this).attr('val');
+				layer.open({
+					icon:0,
+					title: '删除列表',
+					type: 0, 
+					content: '是否删除选中列表',
+					btn: ['确认', '取消'],
+					yes: function(){
+							location.href = val;
+						}
+				});	
+			})
+		})
+	</script>
+</body>
+</html>
